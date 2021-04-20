@@ -13,8 +13,8 @@ INDEX_QUANTITY=1
 INDEX_VALUE=2
 INDEX_COST=3
 
-def get_transactions(crypto):
-    filename = f"{crypto}.csv"
+def get_transactions(crypto, data):
+    filename = f"{data}/{crypto}.csv"
     file = open(filename,"r")
     if not file:
         return []
@@ -36,9 +36,9 @@ def get_latest(currency):
     json_data = response.json()
     return float(json_data['lastPrice'])
 
-def get_summary(currency):
+def get_summary(currency, data):
     global INDEX_QUANTITY, INDEX_VALUE, INDEX_COST
-    transactions = get_transactions(currency)
+    transactions = get_transactions(currency, data)
     latest = get_latest(currency)
     total_value = 0
     total_cost = 0
@@ -65,14 +65,14 @@ def format_result(summary, with_coin = False):
         coins = f"Coins: {total_quantity}, "
     return f"{coins}Cost: {total_cost}, Value: {total_value}, {profit}: {total_profit}"
 
-def get_data():
+def get_data(data):
   total_cost = 0
   total_value = 0
   total_quantity = 0
   result = ""
 
   for symbol in SYMBOLS:
-      summary = get_summary(symbol[1])
+      summary = get_summary(symbol[1], data)
       result = result + f"Results for {symbol[0]}: {summary[2]}\n"
       total_cost = total_cost + summary[0]
       total_value = total_value + summary[1]

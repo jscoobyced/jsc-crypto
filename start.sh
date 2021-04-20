@@ -1,3 +1,4 @@
 #!/bin/sh
 
-nohup python jsc_ticker.py & > /dev/null
+cd /opt/jsc_crypto/
+python3 jsc_ticker.py data

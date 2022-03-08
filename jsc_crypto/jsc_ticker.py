@@ -10,7 +10,7 @@ def listen(host, port, data):
     print("Connection received.")
     header = "HTTP/1.1 200 OK\n"
     header = header + "Server: nginx\n"
-    header = header + "Content-Type: text/plain; charset=UTF-8\n"
+    header = header + "Content-Type: text/html; charset=UTF-8\n"
 
     while True:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:

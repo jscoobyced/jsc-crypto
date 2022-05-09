@@ -9,7 +9,8 @@ CURRENCY = "THB"
 SELF = "thb_thb"
 SYMBOLS = [["DOGE", "doge_thb", 0, 1], ["ADA", "ada_thb", 0, 1],
            ["BTC", "btc_thb", 0, 1], ["TRX", "trx_thb", 0, 1],
-           ["THB", "thb_thb", 0, 1], ["SHIB", "SHIBUSDT", 1, 31.25]]
+           ["THB", "thb_thb", 0, 1], ["SHIB", "SHIBUSDT", 1, 31.25],
+           ["ETH", "eth_thb", 0, 1]]
 INDEX_DATE = 0
 INDEX_QUANTITY = 1
 INDEX_VALUE = 2
